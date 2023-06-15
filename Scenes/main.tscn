@@ -1,31 +1,174 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Themes/Default_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/main.gd" type="Script" id=2]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_right = 1.0
+[node name="MarginUI" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
+margin_left = -397.5
+margin_top = 200.0
+margin_right = 397.5
+margin_bottom = -200.0
 
-[node name="LabelSalary" type="Label" parent="VBoxContainer"]
-margin_right = 1080.0
-margin_bottom = 14.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginUI"]
+margin_right = 806.0
+margin_bottom = 1520.0
+
+[node name="VboxSalarioSemana" type="VBoxContainer" parent="MarginUI/VBoxContainer"]
+margin_right = 806.0
+margin_bottom = 128.0
+
+[node name="LabelSalary" type="Label" parent="MarginUI/VBoxContainer/VboxSalarioSemana"]
+margin_right = 806.0
+margin_bottom = 57.0
 text = "INTRODUCE TU SALARIO BRUTO"
+align = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 18.0
-margin_right = 1080.0
-margin_bottom = 42.0
+[node name="InputMargin" type="HBoxContainer" parent="MarginUI/VBoxContainer/VboxSalarioSemana"]
+margin_top = 61.0
+margin_right = 806.0
+margin_bottom = 128.0
 
-[node name="LabelDollarSymbol" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="LabelDollarSymbol" type="Label" parent="MarginUI/VBoxContainer/VboxSalarioSemana/InputMargin"]
 margin_top = 5.0
-margin_right = 8.0
-margin_bottom = 19.0
+margin_right = 28.0
+margin_bottom = 62.0
 text = "$"
 
-[node name="InputSalayr" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
-margin_left = 12.0
-margin_right = 1080.0
-margin_bottom = 24.0
+[node name="InputSalary" type="SpinBox" parent="MarginUI/VBoxContainer/VboxSalarioSemana/InputMargin"]
+unique_name_in_owner = true
+margin_left = 32.0
+margin_right = 806.0
+margin_bottom = 67.0
 size_flags_horizontal = 3
+max_value = 1e+09
+
+[node name="VboxDiasXSemana" type="VBoxContainer" parent="MarginUI/VBoxContainer"]
+margin_top = 132.0
+margin_right = 806.0
+margin_bottom = 260.0
+
+[node name="LabelDias" type="Label" parent="MarginUI/VBoxContainer/VboxDiasXSemana"]
+margin_right = 806.0
+margin_bottom = 57.0
+text = "NUMERO DE DIAS LABORALES"
+align = 1
+
+[node name="InputDias" type="SpinBox" parent="MarginUI/VBoxContainer/VboxDiasXSemana"]
+unique_name_in_owner = true
+margin_top = 61.0
+margin_right = 806.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+min_value = 1.0
+value = 1.0
+
+[node name="VboxHorasXDia" type="VBoxContainer" parent="MarginUI/VBoxContainer"]
+margin_top = 264.0
+margin_right = 806.0
+margin_bottom = 392.0
+
+[node name="LabelHoras" type="Label" parent="MarginUI/VBoxContainer/VboxHorasXDia"]
+margin_right = 806.0
+margin_bottom = 57.0
+text = "NUMERO DE HORAS LABORALES"
+align = 1
+
+[node name="InputHoras" type="SpinBox" parent="MarginUI/VBoxContainer/VboxHorasXDia"]
+unique_name_in_owner = true
+margin_top = 61.0
+margin_right = 806.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+min_value = 1.0
+value = 1.0
+
+[node name="VboxHorasXDia2" type="VBoxContainer" parent="MarginUI/VBoxContainer"]
+margin_top = 396.0
+margin_right = 806.0
+margin_bottom = 524.0
+
+[node name="LabelHoras" type="Label" parent="MarginUI/VBoxContainer/VboxHorasXDia2"]
+margin_right = 806.0
+margin_bottom = 57.0
+text = "NUMERO DE HORAS EXTRA"
+align = 1
+
+[node name="InputExtra" type="SpinBox" parent="MarginUI/VBoxContainer/VboxHorasXDia2"]
+unique_name_in_owner = true
+margin_top = 61.0
+margin_right = 806.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+
+[node name="ButtonCalculate" type="Button" parent="MarginUI/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 528.0
+margin_right = 806.0
+margin_bottom = 591.0
+text = "Calcular"
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginUI/VBoxContainer"]
+margin_top = 595.0
+margin_right = 806.0
+margin_bottom = 774.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginUI/VBoxContainer/HBoxContainer"]
+margin_right = 806.0
+margin_bottom = 57.0
+
+[node name="Label" type="Label" parent="MarginUI/VBoxContainer/HBoxContainer/HBoxContainer"]
+margin_right = 307.0
+margin_bottom = 57.0
+text = "Total Diario: $"
+
+[node name="LabelResultDiario" type="Label" parent="MarginUI/VBoxContainer/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 311.0
+margin_right = 339.0
+margin_bottom = 57.0
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginUI/VBoxContainer/HBoxContainer"]
+margin_top = 61.0
+margin_right = 806.0
+margin_bottom = 118.0
+
+[node name="Label" type="Label" parent="MarginUI/VBoxContainer/HBoxContainer/HBoxContainer2"]
+margin_right = 285.0
+margin_bottom = 57.0
+text = "Total Hora: $"
+
+[node name="LabelResultHora" type="Label" parent="MarginUI/VBoxContainer/HBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+margin_left = 289.0
+margin_right = 317.0
+margin_bottom = 57.0
+text = "0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginUI/VBoxContainer/HBoxContainer"]
+margin_top = 122.0
+margin_right = 806.0
+margin_bottom = 179.0
+
+[node name="Label" type="Label" parent="MarginUI/VBoxContainer/HBoxContainer/HBoxContainer3"]
+margin_right = 293.0
+margin_bottom = 57.0
+text = "Total Extra: $"
+
+[node name="LabelResultExtra" type="Label" parent="MarginUI/VBoxContainer/HBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+margin_left = 297.0
+margin_right = 325.0
+margin_bottom = 57.0
+text = "0"
+
+[connection signal="focus_entered" from="MarginUI/VBoxContainer/VboxDiasXSemana/InputDias" to="." method="_on_InputDias_focus_entered"]
