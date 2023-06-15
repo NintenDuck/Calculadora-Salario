@@ -96,38 +96,55 @@ text = "Calcular"
 [node name="Totales" type="VBoxContainer" parent="MarginUI/VBoxContainer"]
 margin_top = 463.0
 margin_right = 795.0
-margin_bottom = 581.0
+margin_bottom = 642.0
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginUI/VBoxContainer/Totales"]
+[node name="SalarioXHora" type="HBoxContainer" parent="MarginUI/VBoxContainer/Totales"]
 margin_right = 795.0
 margin_bottom = 57.0
 
-[node name="Label" type="Label" parent="MarginUI/VBoxContainer/Totales/HBoxContainer3"]
-margin_right = 307.0
+[node name="Label" type="Label" parent="MarginUI/VBoxContainer/Totales/SalarioXHora"]
+margin_right = 420.0
 margin_bottom = 57.0
-text = "Total Extra:  $"
+text = "Total por hora:     $"
 
-[node name="LabelResultExtra" type="Label" parent="MarginUI/VBoxContainer/Totales/HBoxContainer3"]
+[node name="LabelHora" type="Label" parent="MarginUI/VBoxContainer/Totales/SalarioXHora"]
 unique_name_in_owner = true
-margin_left = 311.0
-margin_right = 339.0
+margin_left = 424.0
+margin_right = 452.0
 margin_bottom = 57.0
 text = "0"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginUI/VBoxContainer/Totales"]
+[node name="SalarioExtra" type="HBoxContainer" parent="MarginUI/VBoxContainer/Totales"]
 margin_top = 61.0
 margin_right = 795.0
 margin_bottom = 118.0
 
-[node name="Label" type="Label" parent="MarginUI/VBoxContainer/Totales/HBoxContainer4"]
-margin_right = 388.0
+[node name="Label" type="Label" parent="MarginUI/VBoxContainer/Totales/SalarioExtra"]
+margin_right = 430.0
 margin_bottom = 57.0
-text = "Total Semanal:  $"
+text = "Total Hora Extra:  $"
 
-[node name="LabelResultTotal" type="Label" parent="MarginUI/VBoxContainer/Totales/HBoxContainer4"]
+[node name="LabelHoraExtra" type="Label" parent="MarginUI/VBoxContainer/Totales/SalarioExtra"]
 unique_name_in_owner = true
-margin_left = 392.0
-margin_right = 420.0
+margin_left = 434.0
+margin_right = 462.0
+margin_bottom = 57.0
+text = "0"
+
+[node name="SalarioTotal" type="HBoxContainer" parent="MarginUI/VBoxContainer/Totales"]
+margin_top = 122.0
+margin_right = 795.0
+margin_bottom = 179.0
+
+[node name="Label" type="Label" parent="MarginUI/VBoxContainer/Totales/SalarioTotal"]
+margin_right = 430.0
+margin_bottom = 57.0
+text = "Total Semanal:     $"
+
+[node name="LabelSemanal" type="Label" parent="MarginUI/VBoxContainer/Totales/SalarioTotal"]
+unique_name_in_owner = true
+margin_left = 434.0
+margin_right = 462.0
 margin_bottom = 57.0
 text = "0"
 
